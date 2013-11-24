@@ -1,0 +1,25 @@
+\docType{package}
+\name{stepCAT}
+\alias{stepCAT}
+\alias{stepCAT-package}
+\title{Common interface to build an adaptive test}
+\description{
+  The \code{stepCAT} provides a common interface to build
+  an adaptive test, for a given calibrated item bank in a
+  data table and by using some of functions in \pkg{catR}
+  package, and to administers that test by one of options
+  of Graphical User Interface.\cr \cr Use
+  \code{library(help = 'stepCAT')} for information about
+  the package.
+}
+\author{
+  Henrique Krefer (UFPR, Brazil), Rhuan Gabriel C. de Lima
+  (UFPR, Brazil)
+}
+\references{
+  David Magis and Gilles Raiche (2012). Random Generation
+  of Response Patterns under Computerized Adaptive Testing
+  with the R Package catR. Journal of Statistical Software,
+  48 (8), \url{http://www.jstatsoft.org/v48/i08/}.
+}
+

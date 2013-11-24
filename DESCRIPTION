@@ -1,0 +1,18 @@
+Package: stepCAT
+Type: Package
+Version: 1.0
+Date: 2013-10-28
+Title: Common interface to build an adaptive test
+Author: Henrique Krefer (UFPR, Brazil), Rhuan Lima (UFPR, Brazil)
+Maintainer: Henrique Krefer <henrique.krefer@gmail.com>
+Description: The stepCAT provides a common interface to build an adaptive test,
+    for a given calibrated item bank in a data table and by using some of
+    functions in catR package, and to administers that test by one of options
+    of Graphical User Interface.
+Depends:
+    catR (>= 2.5)
+Suggests:
+    tcltk (>= 3.0.1)
+License: GPL (>= 2) | file LICENSE
+Collate:
+    'stepCAT.R'

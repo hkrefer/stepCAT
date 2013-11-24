@@ -1,0 +1,31 @@
+\name{stepCAT.final}
+\alias{stepCAT.final}
+\title{Computes the final estimates for an adaptive test}
+\usage{
+  stepCAT.final(test, ...)
+}
+\arguments{
+  \item{test}{object: values \code{items}, \code{par},
+  \code{x}, \code{theta}, \code{SE} and \code{CI} from
+  function \code{\link{stepCAT.test}}.}
+
+  \item{\dots}{arguments: to pass it on functions.}
+}
+\value{
+  Object of class \code{'list'}.
+}
+\description{
+  The \code{stepCAT.final} Computes the final estimates for
+  an adaptive test.
+}
+\details{
+  This version only returns as-is the object \code{test}.
+}
+\examples{
+# stepCAT.final example 1
+
+}
+\seealso{
+  \code{\link{stepCAT.by}}
+}
+

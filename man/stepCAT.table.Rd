@@ -1,0 +1,107 @@
+\name{stepCAT.table}
+\alias{stepCAT.table}
+\alias{stepCAT.table.concerto}
+\alias{stepCAT.table.file}
+\title{Reads from a data table and sets it up an item table}
+\usage{
+  stepCAT.table(table, DB = "file", ...)
+
+  \method{stepCAT.table}{file} (table, id = FALSE,
+    choices = 5, header = TRUE, sep = ";",
+    encoding = "UTF-8", ...)
+
+  \method{stepCAT.table}{concerto} (table, id = FALSE,
+    choices = 5, tableWorkspaceID = NULL,
+    file.force = FALSE, ...)
+}
+\arguments{
+  \item{table}{character: name of data table which to be
+  read from it.}
+
+  \item{DB}{character: to use a method.}
+
+  \item{id}{logical: \code{TRUE} for an index of item in
+  first column of data from the \code{table}.}
+
+  \item{choices}{integer: number of columns of data from
+  the \code{table} for choices in the question of item.}
+
+  \item{\dots}{arguments: to pass it on functions.}
+
+  \item{header}{logical: \code{TRUE} for parameter names in
+  first row of data from the \code{table}.}
+
+  \item{sep}{character: separator for values on each row of
+  data from the \code{table}.}
+
+  \item{encoding}{character: native encoding to handle
+  encoded strings from the \code{table}.}
+
+  \item{tableWorkspaceID}{numeric: \strong{Concerto}
+  Workspace ID where the \code{table} is located.}
+
+  \item{file.force}{logical: \code{TRUE} to force read data
+  from the \code{table} just like from the method
+  \code{file}.}
+}
+\value{
+  Object of class \code{'data.frame'}:
+
+  \item{id}{numeric: index (optional value by argument
+  \code{id}).}
+
+  \item{a}{numeric: discrimination parameter.}
+
+  \item{b}{numeric: difficulty parameter.}
+
+  \item{c}{numeric: pseudo-guessing parameter.}
+
+  \item{d}{numeric: inattention parameter.}
+
+  \item{r}{numeric: response value.}
+
+  \item{q}{character: question text.}
+
+  \item{ch\emph{1}}{character: choice text \emph{1}.}
+
+  \item{ch\emph{:}}{character: choice text \emph{:}
+  (variable value by argument \code{choices}).}
+
+  \item{ch\emph{n}}{character: choice text \emph{n}.}
+}
+\description{
+  The \code{stepCAT.table} reads data from a table format
+  and sets it up an item table by using function
+  \code{\link{stepCAT.items}}.
+}
+\details{
+  The \code{stepCAT.table} as generic function has two
+  methods: \describe{ \item{\code{DB} of class
+  \code{'file'}}{argument \code{choices} must be a positive
+  integer or else default value is assumed;\cr see about
+  optional arguments on function
+  \code{\link[utils]{read.table}};\cr see about
+  specification for data table on function
+  \code{\link{stepCAT.items}} in \code{items} of class
+  \code{'data.frame'}.} \item{\code{DB} of class
+  \code{'concerto'}}{argument \code{choices} must be a
+  positive integer or else default value is assumed;\cr
+  argument \code{tableWorkspaceID} must be a positive
+  integer or else \code{NULL} value is assumed;\cr if
+  argument \code{tableWorkspaceID} has \code{NULL} value
+  the \strong{Concerto} session variable
+  \code{concerto$workspaceID} is assumed;\cr see about
+  specification for data table on function
+  \code{\link{stepCAT.items}} in \code{items} of class
+  \code{'data.frame'}.} }
+}
+\examples{
+# stepCAT.table example 1
+
+}
+\seealso{
+  \code{\link{stepCAT.by}},
+  \href{https://code.google.com/p/concerto-platform/}{Concerto
+  Platform}
+}
+
