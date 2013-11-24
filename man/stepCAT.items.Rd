@@ -81,7 +81,7 @@
   a positive integer or else default value is assumed.} }
 }
 \examples{
-# stepCAT.items example 1
+## stepCAT.items example 1
 
 }
 \seealso{

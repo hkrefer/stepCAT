@@ -25,7 +25,7 @@
   \code{choice.random}.
 }
 \examples{
-# stepCAT.prompt example 1
+## stepCAT.prompt example 1
 
 }
 \seealso{

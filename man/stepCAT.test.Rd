@@ -118,7 +118,7 @@
   See about argument \code{test} on topic \strong{Value}.
 }
 \examples{
-# stepCAT.test example 1
+## stepCAT.test example 1
 
 }
 \seealso{

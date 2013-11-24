@@ -96,7 +96,7 @@
   \code{'data.frame'}.} }
 }
 \examples{
-# stepCAT.table example 1
+## stepCAT.table example 1
 
 }
 \seealso{

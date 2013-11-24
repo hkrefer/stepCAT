@@ -75,7 +75,7 @@
   assumed.} }
 }
 \examples{
-# stepCAT.choice example 1
+## stepCAT.choice example 1
 
 }
 \seealso{

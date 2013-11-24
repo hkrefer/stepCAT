@@ -39,7 +39,7 @@
   satisfied \code{TRUE} value is returned.
 }
 \examples{
-# stepCAT.stop example 1
+## stepCAT.stop example 1
 
 }
 \seealso{

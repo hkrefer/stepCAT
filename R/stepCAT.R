@@ -81,7 +81,7 @@ stepCAT.by.data.frame <- function(table, ...) {
 
   start <- stepCAT.start(itemBank = bank, ...)
   
-  test <- stepCAT.test(items = items, itemBank = bank, firstItems = start$items, ...)
+  test <- stepCAT.test(items = items, itemBank = bank, item = start$items, ...)
   
   final <- stepCAT.final(test = test, ...)
   

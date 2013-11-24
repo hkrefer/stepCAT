@@ -31,7 +31,7 @@
   function \code{\link[catR]{createItemBank}}.
 }
 \examples{
-# stepCAT.bank example 1
+## stepCAT.bank example 1
 
 }
 \seealso{

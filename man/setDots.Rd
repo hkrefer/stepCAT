@@ -15,7 +15,7 @@
   function.
 }
 \examples{
-# setDots example 1
+## setDots example 1
 
 require(stepCAT)
 

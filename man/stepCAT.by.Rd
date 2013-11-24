@@ -102,7 +102,7 @@
   \code{\link{stepCAT.final}}.} }
 }
 \examples{
-# stepCAT.by example 1
+## stepCAT.by example 1
 
 }
 \seealso{

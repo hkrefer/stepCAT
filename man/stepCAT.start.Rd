@@ -49,7 +49,7 @@
   on function \code{\link[catR]{startItems}}.
 }
 \examples{
-# stepCAT.start example 1
+## stepCAT.start example 1
 
 }
 \seealso{

@@ -22,7 +22,7 @@
   This version only returns as-is the object \code{test}.
 }
 \examples{
-# stepCAT.final example 1
+## stepCAT.final example 1
 
 }
 \seealso{
