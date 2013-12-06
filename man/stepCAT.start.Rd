@@ -2,7 +2,7 @@
 \alias{stepCAT.start}
 \title{Selects the first items for an adaptive test}
 \usage{
-  stepCAT.start(itemBank, nrItems = 1, theta = 0,
+  stepCAT.start(itemBank, nrItems = 1, startTheta = 0,
     halfRange = 2, startSelect = "MFI", seed = NULL, ...)
 }
 \arguments{
@@ -13,8 +13,8 @@
   \item{nrItems}{numeric: number of items to select from
   the \code{itemBank}.}
 
-  \item{theta}{numeric: initial ability level to select
-  items from the \code{itemBank}.}
+  \item{startTheta}{numeric: initial ability level to
+  select items from the \code{itemBank}.}
 
   \item{halfRange}{numeric: half of range of initial
   ability level to select items from the \code{itemBank}.}

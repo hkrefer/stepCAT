@@ -6,3 +6,4 @@
 
 # RStudio project
 *.Rproj*
+.Rproj.user

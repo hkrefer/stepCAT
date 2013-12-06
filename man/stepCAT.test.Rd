@@ -93,8 +93,9 @@
   from an item table and item bank, and computes the
   ability estimate and selects next items by using
   functions \code{\link[catR]{thetaEst}},
-  \code{\link[catR]{semTheta}}, \code{\link{stepCAT.stop}}
-  and \code{\link[catR]{nextItem}}.
+  \code{\link[catR]{semTheta}},
+  \code{\link[catR]{nextItem}} and
+  \code{\link{stepCAT.stop}}.
 }
 \details{
   See about argument \code{items} on function
@@ -123,6 +124,6 @@
 }
 \seealso{
   \code{\link{stepCAT.by}}, \code{\link{stepCAT.table}},
-  \code{\link[catR]{semTheta}}
+  \code{\link{stepCAT.prompt}}
 }
 

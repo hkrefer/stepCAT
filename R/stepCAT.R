@@ -76,9 +76,9 @@ stepCAT.by.data.frame <- function(table, ...) {
   library(catR)
   
   items <- stepCAT.items(items = table, ...)
-
+  
   bank <- stepCAT.bank(items = items, ...)
-
+  
   start <- stepCAT.start(itemBank = bank, ...)
   
   test <- stepCAT.test(items = items, itemBank = bank, item = start$items, ...)
@@ -352,7 +352,7 @@ stepCAT.table.concerto <- function(table, id = FALSE, choices = 5, tableWorkspac
 #' @return List of class \code{'itBank'}.
 #' @return See about values \code{itemPar}, \code{theta}, \code{infoTab} and \code{cbGroup} on function \code{\link[catR]{createItemBank}}.
 #' 
-#' @seealso \code{\link{stepCAT.by}}, \code{\link{stepCAT.items}}, \code{\link{stepCAT.table}}
+#' @seealso \code{\link{stepCAT.by}}, \code{\link{stepCAT.items}}, \code{\link{stepCAT.table}}, \code{\link{stepCAT.start}}, \code{\link{stepCAT.test}}
 #' @example examples/stepCAT.bank_1-Ex.R
 #' 
 stepCAT.bank <- function(items, ...) {
@@ -375,7 +375,7 @@ stepCAT.bank <- function(items, ...) {
 #'
 #' @param itemBank object: item bank of class \code{'itBank'} from returned value of function \code{\link[catR]{createItemBank}}.
 #' @param nrItems numeric: number of items to select from the \code{itemBank}.
-#' @param theta numeric: initial ability level to select items from the \code{itemBank}.
+#' @param startTheta numeric: initial ability level to select items from the \code{itemBank}.
 #' @param halfRange numeric: half of range of initial ability level to select items from the \code{itemBank}.
 #' @param startSelect character: criterion to select items from the \code{itemBank}.
 #' @param seed numeric: fix the random selection by random seed number.
@@ -389,7 +389,7 @@ stepCAT.bank <- function(items, ...) {
 #' @seealso \code{\link{stepCAT.by}}, \code{\link{stepCAT.items}}, \code{\link{stepCAT.table}}, \code{\link{stepCAT.bank}}
 #' @example examples/stepCAT.start_1-Ex.R
 #' 
-stepCAT.start <- function(itemBank, nrItems = 1, theta = 0, halfRange = 2, startSelect = "MFI", seed = NULL, ...) {
+stepCAT.start <- function(itemBank, nrItems = 1, startTheta = 0, halfRange = 2, startSelect = "MFI", seed = NULL, ...) {
   
   startItems <- setDots(startItems)
 
@@ -402,7 +402,7 @@ stepCAT.start <- function(itemBank, nrItems = 1, theta = 0, halfRange = 2, start
   
   start <- startItems(itemBank = itemBank, 
                       seed = seed,
-                      nrItems = nrItems, theta = theta, halfRange = halfRange, 
+                      nrItems = nrItems, theta = startTheta, halfRange = halfRange, 
                       startSelect = startSelect, 
                       ...)
   
@@ -415,7 +415,7 @@ stepCAT.start <- function(itemBank, nrItems = 1, theta = 0, halfRange = 2, start
 #' @name stepCAT.test
 #' @export stepCAT.test
 #' @title Administers an adaptive test and computes its estimates
-#' @description The \code{stepCAT.test} administers an adaptive test, from an item table and item bank, and computes the ability estimate and selects next items by using functions \code{\link[catR]{thetaEst}}, \code{\link[catR]{semTheta}}, \code{\link{stepCAT.stop}} and \code{\link[catR]{nextItem}}.
+#' @description The \code{stepCAT.test} administers an adaptive test, from an item table and item bank, and computes the ability estimate and selects next items by using functions \code{\link[catR]{thetaEst}}, \code{\link[catR]{semTheta}}, \code{\link[catR]{nextItem}} and \code{\link{stepCAT.stop}}.
 #'
 #' @param items object: data frame by columns named like \emph{"a"}, \emph{"b"}, \emph{"c"} and \emph{"d"} for parameters and \emph{"r"}, \emph{"q"} and \emph{"ch[1:n]"} for content;
 #' @param itemBank object: item bank of class \code{'itBank'} from returned values of function \code{\link[catR]{createItemBank}} (usually from object \code{items}).
@@ -454,7 +454,7 @@ stepCAT.start <- function(itemBank, nrItems = 1, theta = 0, halfRange = 2, start
 #' @return \item{test SE}{numeric: standard error of ability estimate of each item.}
 #' @return \item{test CI}{numeric: confidence interval of ability estimate.}
 #' 
-#' @seealso \code{\link{stepCAT.by}}, \code{\link{stepCAT.table}}, \code{\link[catR]{semTheta}}
+#' @seealso \code{\link{stepCAT.by}}, \code{\link{stepCAT.table}}, \code{\link{stepCAT.prompt}}
 #' @example examples/stepCAT.test_1-Ex.R
 #' 
 stepCAT.test <- function(items, itemBank, item = 1, GUI = "console", show.id = FALSE, method = "BM", criterion = "MFI", rule = "length", thr = 10, alpha = 0.05, out = NULL, x = NULL, test = NULL, ...) {

@@ -36,6 +36,7 @@
 }
 \seealso{
   \code{\link{stepCAT.by}}, \code{\link{stepCAT.items}},
-  \code{\link{stepCAT.table}}
+  \code{\link{stepCAT.table}}, \code{\link{stepCAT.start}},
+  \code{\link{stepCAT.test}}
 }
 
