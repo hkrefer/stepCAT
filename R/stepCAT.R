@@ -729,43 +729,49 @@ stepCAT.choice.concerto <- function(item = NULL, question = NA, choices = rep(NA
 stepCAT.choice.tcltk <- function(item = NULL, question = NA, choices = rep(NA, 5), ...) {
 
   library(tcltk)
-  done <- 0
-  choice <-0
-  tt <- tktoplevel()
   
-  header<-ifelse(is.null(item),question,paste(item,"-",question))
+  header <- ifelse(is.null(item), paste0(question), paste(item, "-", question))
   
-  tkgrid(tklabel(tt,text=header))
-  tkgrid(tklabel(tt,text=""))
+  done <- tclVar(0)
   rbValue <- tclVar(0)
   
+  tt <- tktoplevel()
   
-  for (i in 1:length(choices)){
-    ch <- choices[[i]]
-    aw1 <- tkradiobutton(tt)
-    tkconfigure(aw1,variable=rbValue,value=i)
-    tkgrid(tklabel(tt,text=ch),aw1)
+  tkgrid(tklabel(tt, text=header), sticky="w")
+
+  tkgrid(tklabel(tt,text=""))
+    
+  for (i in 1:length(choices)) {
+    choice.label <- tklabel(tt, text=choices[[i]])
+    choice.value <- tkradiobutton(tt)
+    
+    tkconfigure(choice.value, variable=rbValue, value=i)
+    
+    tkgrid(choice.label, choice.value)
+    
+    tkgrid.configure(choice.label, sticky="w")
   }
   tkgrid(tklabel(tt,text=""))
   tkgrid(tklabel(tt,text=""))
   
-  OnOK <- function()
-  {
-    choice <- (tclvalue(rbValue))
-    if (choice > 0 ){
+  OnOK <- function() {
+    if (tclvalue(rbValue) > 0 ){
       tkdestroy(tt)
-      #tkmessageBox(message=paste("Good choice! Answer: ",rbVal))
       tclvalue(done) <- 1
     }
-    
   }
   
-  OK.but <- tkbutton(tt,text="OK",command=OnOK)
+  OK.but <- tkbutton(tt, text="Submit", command=OnOK)
   
   tkgrid(OK.but)
   
+  tkbind(tt, "<Destroy>", function() tclvalue(done) <- 1)
+  tkfocus(tt)
+  
   tkwait.variable(done)
   
+  choice <- tclvalue(rbValue)
+
   return(as.numeric(choice))
 }
 
