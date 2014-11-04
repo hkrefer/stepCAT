@@ -69,7 +69,7 @@ stepCAT.by <- function(table, ...) {
 #' @name stepCAT.by.data.frame
 #'
 #' @method stepCAT.by data.frame
-#' @S3method stepCAT.by data.frame
+#' @export
 #' 
 stepCAT.by.data.frame <- function(table, ...) {
   
@@ -96,7 +96,7 @@ stepCAT.by.data.frame <- function(table, ...) {
 #' @name stepCAT.by.character
 #'
 #' @method stepCAT.by character
-#' @S3method stepCAT.by character
+#' @export
 #' 
 stepCAT.by.character <- function(table, ...) {
   
@@ -109,7 +109,7 @@ stepCAT.by.character <- function(table, ...) {
 #' @name stepCAT.by.numeric
 #'
 #' @method stepCAT.by numeric
-#' @S3method stepCAT.by numeric
+#' @export
 #'  
 stepCAT.by.numeric <- function(table, ...) {
   
@@ -162,7 +162,7 @@ stepCAT.items <- function(items, ...) {
 #' @name stepCAT.items.numeric
 #' 
 #' @method stepCAT.items numeric
-#' @S3method stepCAT.items numeric
+#' @export
 #' 
 stepCAT.items.numeric <- function(items = 50, id = FALSE, choices = 5, model = "3PL", ...) {
   
@@ -197,7 +197,7 @@ stepCAT.items.numeric <- function(items = 50, id = FALSE, choices = 5, model = "
 #' @name stepCAT.items.data.frame
 #'
 #' @method stepCAT.items data.frame
-#' @S3method stepCAT.items data.frame
+#' @export
 #' 
 stepCAT.items.data.frame <- function(items, id = FALSE, choices = 5, ...) {
 
@@ -273,6 +273,7 @@ stepCAT.table <- function(table, DB = "file", ...) {
 #' @name stepCAT.table.file
 #' 
 #' @method stepCAT.table file
+#' @export
 #' 
 stepCAT.table.file <- function(table, id = FALSE, choices = 5, header = TRUE, sep = ";", encoding = "UTF-8", ...) {
   
@@ -294,6 +295,7 @@ stepCAT.table.file <- function(table, id = FALSE, choices = 5, header = TRUE, se
 #' @name stepCAT.table.concerto
 #'
 #' @method stepCAT.table concerto
+#' @export
 #' 
 stepCAT.table.concerto <- function(table, id = FALSE, choices = 5, tableWorkspaceID = NULL, file.force = FALSE, ...) {
     
@@ -361,7 +363,7 @@ stepCAT.bank <- function(items, ...) {
   
   items <- items[, c("a", "b", "c", "d")]
   bank <- createItemBank(items = items, ...)
-  
+
   return(bank)
 }
 
@@ -590,6 +592,8 @@ stepCAT.final <- function(test, ...) {
   return(test)
 }
 
+#setClass("console", representation(GUI = "character"), prototype(GUI = "console"))
+
 # stepCAT.choice ----------------------------------------------------------
 
 #' @rdname stepCAT.choice
@@ -631,6 +635,7 @@ stepCAT.choice <- function(GUI = "console", item = NULL, question = NA, choices 
 #' @name stepCAT.choice.console
 #'                                  
 #' @method stepCAT.choice console
+#' @export
 #' 
 stepCAT.choice.console <- function(item = NULL, question = NA, choices = rep(NA, 5), ...) {
   
@@ -655,6 +660,7 @@ stepCAT.choice.console <- function(item = NULL, question = NA, choices = rep(NA,
 #' @name stepCAT.choice.concerto
 #' 
 #' @method stepCAT.choice concerto
+#' @export
 #' 
 stepCAT.choice.concerto <- function(item = NULL, question = NA, choices = rep(NA, 5), templateID = NULL, templateWorkspaceID = NULL, submit = "Submit", console.force = FALSE, ...) {
        
@@ -725,6 +731,7 @@ stepCAT.choice.concerto <- function(item = NULL, question = NA, choices = rep(NA
 #' @name stepCAT.choice.tcltk
 #'          
 #' @method stepCAT.choice tcltk
+#' @export
 #' 
 stepCAT.choice.tcltk <- function(item = NULL, question = NA, choices = rep(NA, 5), ...) {
 
